@@ -1,0 +1,41 @@
+# ── macOS ──────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ── Xcode ──────────────────────────────────────────────
+# Project is generated from project.yml by XcodeGen (run `xcodegen`)
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+DerivedData/
+build/
+*.hmap
+*.ipa
+*.dSYM
+*.dSYM.zip
+*.xcarchive
+
+# ── Swift Package Manager ──────────────────────────────
+.build/
+.swiftpm/
+# Package.resolved IS committed (pins exact dependency versions)
+
+# ── Supabase CLI (if used later) ───────────────────────
+supabase/.temp/
+supabase/.branches/
+
+# ── Secrets / local config ─────────────────────────────
+.env
+.env.*
+*.p12
+*.mobileprovision
+Secrets.xcconfig
+
+# ── Editors ────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp

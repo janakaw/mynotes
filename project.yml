@@ -1,0 +1,45 @@
+# XcodeGen spec. Generate the Xcode project with:  xcodegen
+# Edit DEVELOPMENT_TEAM, bundle IDs and the associated domain first.
+name: SecretShare
+options:
+  bundleIdPrefix: com.klouddog
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+packages:
+  SecretShareCore:
+    path: SecretShareCore
+  Supabase:
+    url: https://github.com/supabase/supabase-swift
+    from: 2.55.0
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: "6FK25CLQ97"            # ← your 10-character Team ID
+targets:
+  SecretShare:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+    dependencies:
+      - package: SecretShareCore
+      - package: Supabase
+        product: Supabase
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: SecretShare
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+    entitlements:
+      path: App/SecretShare.entitlements
+      properties:
+        com.apple.developer.associated-domains:
+          - webcredentials:secretshare.example.com   # ← your passkey domain
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.klouddog.secretshare
+        TARGETED_DEVICE_FAMILY: "1"
