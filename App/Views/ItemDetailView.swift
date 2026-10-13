@@ -20,7 +20,7 @@ struct ItemDetailView: View {
                 List {
                     Section("Secret") {
                         Text(revealed ? item.secret : String(repeating: "•", count: min(item.secret.count, 16)))
-                            .font(.system(.body, design: .monospaced))
+                            .font(.body.monospacedDigit())
                             .textSelection(.enabled)
                         Button(revealed ? "Hide" : "Reveal") { revealed.toggle() }
                         Button(copied ? "Copied (clears in \(Int(AppConfig.clipboardExpiry))s)" : "Copy") {

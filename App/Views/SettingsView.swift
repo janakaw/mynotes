@@ -40,7 +40,7 @@ struct SettingsView: View {
                     }
                     LabeledContent("Fingerprint") {
                         Text(model.fingerprint)
-                            .font(.system(.footnote, design: .monospaced))
+                            .font(.footnote.monospacedDigit())
                     }
                 } header: {
                     Text("Identity")

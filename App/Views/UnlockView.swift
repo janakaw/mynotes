@@ -70,7 +70,7 @@ struct RecoveryEntryView: View {
             Form {
                 Section {
                     TextField("XXXX-XXXX-XXXX-…", text: $code, axis: .vertical)
-                        .font(.system(.body, design: .monospaced))
+                        .font(.body.monospacedDigit())
                         .textInputAutocapitalization(.characters)
                         .autocorrectionDisabled()
                 } footer: {

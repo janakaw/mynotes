@@ -254,7 +254,7 @@ struct ReceivedSecretView: View {
                     Section {
                         Text(received.title).font(.headline)
                         Text(revealed ? received.secret : String(repeating: "•", count: min(received.secret.count, 16)))
-                            .font(.system(.body, design: .monospaced))
+                            .font(.body.monospacedDigit())
                             .textSelection(.enabled)
                         Button(revealed ? "Hide" : "Reveal") { revealed.toggle() }
                         Button(copied ? "Copied" : "Copy") {
@@ -266,7 +266,7 @@ struct ReceivedSecretView: View {
                         LabeledContent("From", value: "@\(received.sender.handle)")
                         LabeledContent("Fingerprint") {
                             Text(received.sender.fingerprint)
-                                .font(.system(.caption, design: .monospaced))
+                                .font(.caption.monospacedDigit())
                         }
                         LabeledContent("Expires in",
                                        value: Duration.seconds(remaining).formatted(.time(pattern: .hourMinuteSecond)))
@@ -354,7 +354,7 @@ struct ShareComposerView: View {
     private func recipientInfo(_ profile: DirectoryProfile, status: PinStatus) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             Text("@\(profile.handle)").font(.headline)
-            Text(profile.fingerprint).font(.system(.caption, design: .monospaced))
+            Text(profile.fingerprint).font(.caption.monospacedDigit())
             switch status {
             case .new:
                 Label("First time sharing with them. Compare this fingerprint with theirs (Settings) to be sure.",

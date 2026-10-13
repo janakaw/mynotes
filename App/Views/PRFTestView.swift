@@ -24,7 +24,7 @@ struct PRFTestView: View {
                     Text("No results yet").foregroundStyle(.secondary)
                 }
                 ForEach(Array(log.enumerated()), id: \.offset) { _, line in
-                    Text(line).font(.system(.footnote, design: .monospaced))
+                    Text(line).font(.footnote.monospacedDigit())
                 }
             }
         }

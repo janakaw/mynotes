@@ -12,7 +12,7 @@ struct RecoveryCodeView: View {
                     .foregroundStyle(.secondary)
 
                 Text(code)
-                    .font(.system(.title3, design: .monospaced).weight(.semibold))
+                    .font(.title3.weight(.semibold).monospacedDigit())
                     .textSelection(.enabled)
                     .frame(maxWidth: .infinity)
                     .padding()
